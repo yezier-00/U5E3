@@ -1,0 +1,51 @@
+
+import java.util.Scanner;
+public class main {
+
+	public static void main(String[] args) {
+		int aux;
+		Scanner sn=new Scanner(System.in);
+		int matriz[][]=new int[2][2];
+		System.out.println("Dame los elementos de la matriz:");
+for (int i = 0; i < matriz.length; i++) {
+	for (int j = 0; j < matriz.length; j++) {
+		matriz[i][j]=sn.nextInt();
+	}
+	System.out.println();
+}
+System.out.println("matriz sin ordenar:");
+for (int i = 0; i < matriz.length; i++) {
+	for (int j = 0; j < matriz.length; j++) {
+		System.out.print(matriz[i][j]+" ");
+		
+	}
+	System.out.println();
+}
+
+for (int i = 0; i < matriz.length; i++) {
+	for (int j = 0; j < matriz.length; j++) {
+		for (int x = 0; x < matriz.length; x++) {
+			for (int k = 0; k < matriz.length; k++) {
+			
+				if (matriz[i][j]<matriz[x][k]) {
+					 aux=matriz[i][j];
+					matriz[i][j]=matriz[x][k];
+					matriz [x][k]=aux;
+				}
+					
+			}
+		}
+	}
+}
+//mostrar matriz 
+System.out.println("");
+System.out.println("matriz ordenada:");
+for (int i = 0; i <matriz.length; i++) {
+	for (int j = 0; j < matriz.length; j++) {
+		System.out.print(matriz[i][j]+" ");	
+	}
+	System.out.println();
+}
+	}//main
+
+}//class
